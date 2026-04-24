@@ -1,0 +1,41 @@
+{
+  "template_name": "Agent-to-Agent Contract Template (A2A-CT)",
+  "description": "A deterministic contract schema for defining obligations, deliverables, and termination conditions between autonomous agents.",
+  "inputs": {
+    "parties": {
+      "type": "list",
+      "description": "List of agents entering the contract with identifiers and capabilities."
+    },
+    "obligations": {
+      "type": "list",
+      "description": "Actions or deliverables each party must fulfill."
+    },
+    "conditions": {
+      "type": "list",
+      "description": "Conditions that must be met for obligations to activate or complete."
+    },
+    "termination": {
+      "type": "object",
+      "description": "Rules for ending the contract, including triggers and consequences."
+    }
+  },
+  "workflow": [
+    {
+      "step": "validate_structure",
+      "action": "Ensure all required contract fields are present and properly formatted."
+    },
+    {
+      "step": "bind_parties",
+      "action": "Agents acknowledge and bind to the contract terms."
+    },
+    {
+      "step": "activate_obligations",
+      "action": "Obligations activate when conditions are met."
+    },
+    {
+      "step": "finalize",
+      "action": "Contract produces a machine-readable summary of status and compliance."
+    }
+  ],
+  "output_format": "json"
+}
